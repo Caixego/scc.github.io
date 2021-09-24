@@ -1,0 +1,15 @@
+.header {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    /*ADICIONA A BORDAR*/
+    border: 1px solid rgb(68, 67, 67);
+    /*ADICIONA A ALTURA E LARGURA DA BORDA*/
+    padding: .4rem 15%;
+    /*COLOCOU OS CANTOS DA BORDA ARREDONDADO*/
+    border-radius: 5px;
+}

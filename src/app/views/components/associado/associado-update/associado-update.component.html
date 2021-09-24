@@ -1,0 +1,143 @@
+<form class="form mat-elevation-z8">
+    <h1>Atulizar Associado</h1>
+    <mat-form-field class="dez-width" appearance="fill">
+        <mat-label>Numero</mat-label>
+        <input [(ngModel)]="associado.numero" name="numero" matInput>
+    </mat-form-field>
+    <mat-form-field class="cinquenta-width" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input [(ngModel)]="associado.nome" [formControl]="nome" required name="nome" maxlength="100" matInput placeholder="Ex. Pedro">
+        <mat-error *ngIf="nome.invalid">{{ errorValidNome() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="dez-width" appearance="fill">
+        <mat-label>Sexo</mat-label>
+        <input [(ngModel)]="associado.sexo" name="sexo" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Data de Nascimento</mat-label>
+        <input [(ngModel)]="associado.dataNascimento" name="dataNascimento" matInput>
+    </mat-form-field>
+    <!--LINHA-->
+    <mat-form-field class="cinquenta-width" appearance="fill">
+        <mat-label>Nome Mãe</mat-label>
+        <input [(ngModel)]="associado.nomeMae" name="nomeMae" maxlength="100" matInput placeholder="Ex. Maria">
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>RG</mat-label>
+        <input [(ngModel)]="associado.rg" name="rg" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Aposentado ou Pensionista</mat-label>
+        <input [(ngModel)]="associado.situacao" name="situacao" matInput>
+    </mat-form-field>
+    <!--LINHA-->
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input [(ngModel)]="associado.cpf" [formControl]="cpf" required name="cpf" maxlength="15" matInput placeholder="Ex. 111.111.111-11">
+        <mat-error *ngIf="cpf.invalid">{{ errorValidCpf() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Pis/Pasep</mat-label>
+        <input [(ngModel)]="associado.pisPasep" name="pisPasep" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Cargo</mat-label>
+        <input [(ngModel)]="associado.cargo" name="cargo" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Função</mat-label>
+        <input [(ngModel)]="associado.funcao" name="funcao" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Isentos</mat-label>
+        <input [(ngModel)]="associado.isentos" name="isentos" matInput>
+    </mat-form-field>
+    <!--LINHA-->
+    <mat-form-field class="sessenta-width" appearance="fill">
+        <mat-label>Órgão Origem</mat-label>
+        <input [(ngModel)]="associado.orgaoOrigem" name="orgaoOrigem" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Data Admissão Órgão Origem</mat-label>
+        <input [(ngModel)]="associado.dataAdmissaoOrgaoOrigem" name="dataAdmissaoOrgaoOrigem" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Falecidos</mat-label>
+        <input [(ngModel)]="associado.falecidos" name="falecidos" matInput>
+    </mat-form-field>
+    <!--LINHA-->
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Data Admissão</mat-label>
+        <input [(ngModel)]="associado.dataAdmissao" name="dataAdmissao" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Data demissão</mat-label>
+        <input [(ngModel)]="associado.dataDemissao" name="dataDemissao" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Data Atualizaçào</mat-label>
+        <input [(ngModel)]="associado.dataAtualizacao" name="dataAtualizacao" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Moeda</mat-label>
+        <input [(ngModel)]="associado.tipoMoeda" name="tipoMoeda" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Salário Bruto</mat-label>
+        <input [(ngModel)]="associado.salarioBruto" name="salarioBruto" matInput>
+    </mat-form-field>
+    <!--LINHA-->
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Salário Padrão</mat-label>
+        <input [(ngModel)]="associado.salarioPadrao" name="salarioPadrao" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Anuênio</mat-label>
+        <input [(ngModel)]="associado.anuenio" name="anuenio" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>ADI</mat-label>
+        <input [(ngModel)]="associado.adi" name="adi" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>AP</mat-label>
+        <input [(ngModel)]="associado.ap" name="ap" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>VP</mat-label>
+        <input [(ngModel)]="associado.vp" name="vp" matInput>
+    </mat-form-field>
+    <!--LINHA-->
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>GB</mat-label>
+        <input [(ngModel)]="associado.gb" name="gb" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Taxa de Produtividade</mat-label>
+        <input [(ngModel)]="associado.taxaDeProdutividade" name="taxaDeProdutividade" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Alteração Salarial</mat-label>
+        <input [(ngModel)]="associado.alteracaoSalarial" name="alteracaoSalarial" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Total</mat-label>
+        <input [(ngModel)]="associado.total" name="total" matInput>
+    </mat-form-field>
+    <mat-form-field class="vinte-width" appearance="fill">
+        <mat-label>Data Cadastramento</mat-label>
+        <input [(ngModel)]="associado.dataCadastramento" name="dataCadastramento" matInput>
+    </mat-form-field>
+    <!--LINHA-->
+    <mat-form-field class="quarenta-width" appearance="fill">
+        <mat-label>Telefone Fixo</mat-label>
+        <input [(ngModel)]="associado.telefoneFixo" name="telefoneFixo" matInput>
+    </mat-form-field>
+    <mat-form-field class="quarenta-width" appearance="fill">
+        <mat-label>Telefone Celular</mat-label>
+        <input [(ngModel)]="associado.telefoneCelular" name="telefoneCelular" matInput>
+    </mat-form-field>
+
+    <button class="mat-elevation-z8" (click)="update()" [disabled]="errorValidNome() || errorValidCpf()" mat-stroked-button color="primary">ATUALIZAR</button>
+    <button class="mat-elevation-z8" (click)="cancel()" mat-stroked-button color="warn">CANCELAR</button>
+</form>
