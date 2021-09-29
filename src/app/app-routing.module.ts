@@ -6,6 +6,7 @@ import { AssociadoInativoComponent } from './views/components/associado/associad
 import { AssociadoReaderComponent } from './views/components/associado/associado-reader/associado-reader.component';
 import { AssociadoUpdateComponent } from './views/components/associado/associado-update/associado-update.component';
 import { HomeComponent } from './views/components/home/home.component';
+import { PagamentoCreateComponent } from './views/components/pagamento/pagamento-create/pagamento-create.component';
 import { PagamentoReaderComponent } from './views/components/pagamento/pagamento-reader/pagamento-reader.component';
 
 const routes: Routes = [
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'pagamento',
     component: PagamentoReaderComponent
+  },
+  {
+    path: 'pagamento/create',
+    component: PagamentoCreateComponent
   }
 ];
 

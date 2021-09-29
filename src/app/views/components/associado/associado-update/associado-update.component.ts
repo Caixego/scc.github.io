@@ -17,7 +17,7 @@ export class AssociadoUpdateComponent implements OnInit {
     id: '',
     numero: 0,
     nome: '',
-    sexo: 0,
+    sexo: '',
     dataNascimento: '',
     idade2011: '',
     nomeMae: '',
@@ -88,7 +88,6 @@ export class AssociadoUpdateComponent implements OnInit {
   findById(): void {
     this.service.findById(this.id_associado).subscribe((resposta) => {
       this.associado = resposta;
-      this.associado.associadoAtivo = true;
     })
   }
 
@@ -97,6 +96,8 @@ export class AssociadoUpdateComponent implements OnInit {
   }
 
   update(): void {
+    this.formatarCPF();
+    this.associado.associadoAtivo = true;
     this.service.update(this.associado).subscribe((resposta) => {
       this.router.navigate(['associado']);
       this.service.message('Associado atualizado com sucesso.');
@@ -121,5 +122,24 @@ export class AssociadoUpdateComponent implements OnInit {
       return 'O cpf deve ter entre 11 e 15 caracteres!';
     }
     return false;
+  }
+
+  conversor() :void {
+    this.converteDadosSexo();
+  }
+
+  converteDadosSexo():void {
+    if(this.associado.sexo == "MASCULINO"){
+      this.associado.sexo = 0;
+    } else if (this.associado.sexo == "FEMININO") {
+      this.associado.sexo = 1;
+    } else {
+      this.associado.sexo = 0;
+    }
+   }
+
+   formatarCPF(): void {
+    this.associado.cpf = this.associado.cpf.replace(/[^\d]/g, "");
+    this.associado.cpf = this.associado.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
   }
 }

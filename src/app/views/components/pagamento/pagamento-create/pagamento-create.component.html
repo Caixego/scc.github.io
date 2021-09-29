@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>Criando Pagamento</h1>
+
+    <div class="form container" *ngIf="!visualiarFormulario">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input matInput [(ngModel)]="filtroPagamento.cpf" name="cpf">
+        </mat-form-field>
+
+        <button (click)="buscarAssociado()" class="max-elevation-z8 botaoPesquisa" mat-stroked-button color="primary">BUSCAR</button>
+        <button (click)="cancel()" class="max-elevation-z8 botaoPesquisa" mat-stroked-button color="warn">CANCELAR</button>
+    </div>
+
+    <form class="form container" *ngIf="visualiarFormulario">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input [(ngModel)]="pagamento.cpf" [formControl]="cpf" required name="cpf" matInput>
+            <mat-error *ngIf="pagamento.cpf">{{ errorValidCpf() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input [(ngModel)]="pagamento.nome" [formControl]="nome" required name="nome" matInput>
+            <mat-error *ngIf="pagamento.nome">{{ errorValidNome() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Valor</mat-label>
+            <input [(ngModel)]="pagamento.valor" required [formControl]="valor" name="valor" matInput>
+            <mat-error *ngIf="pagamento.valor">{{ errorValidValor() }}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Data Pagamento</mat-label>
+            <input matInput [matDatepicker]="dataPagamento" required [(ngModel)]="pagamento.dataPagamento" name="dataPagamento">
+            <mat-datepicker-toggle matSuffix [for]="dataPagamento"></mat-datepicker-toggle>
+            <mat-datepicker #dataPagamento></mat-datepicker>
+        </mat-form-field>
+        <button (click)="create()" class="max-elevation-z8" [disabled]="errorValidNome() || errorValidCpf() || errorValidValor() || errorValidDataPagamento()" mat-stroked-button color="primary">CRIAR</button>
+        <button (click)="limpar()" class="max-elevation-z8" mat-stroked-button color="accent">LIMPAR</button>
+        <button (click)="cancel()" class="max-elevation-z8" mat-stroked-button color="warn">CANCELAR</button>
+    </form>
+
+
+</div>

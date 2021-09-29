@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Associado } from '../models/associado';
+import { CadastrarPagamento } from '../models/cadastrarPagamento';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,11 @@ export class AssociadoService {
   findById(id : any): Observable<Associado> {
     const url = this.baseUrl + "/associado/"+id;
     return this.http.get<Associado>(url);
+  }
+
+  buscarPeloCPF(cpf : any) : Observable<CadastrarPagamento> {
+    const url = this.baseUrl + "/associado/cpf/"+cpf;
+    return this.http.get<CadastrarPagamento>(url);
   }
 
   findAll():Observable<Associado[]> {

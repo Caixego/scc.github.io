@@ -12,11 +12,17 @@
     </mat-form-field>
     <mat-form-field class="dez-width" appearance="fill">
         <mat-label>Sexo</mat-label>
-        <input [(ngModel)]="associado.sexo" name="sexo" matInput>
+        <mat-select [(ngModel)]="associado.sexo" name="sexo">
+            <mat-option>Sexo</mat-option>
+            <mat-option value="0">Masculino</mat-option>
+            <mat-option value="1">Feminino</mat-option>
+        </mat-select>
     </mat-form-field>
     <mat-form-field class="vinte-width" appearance="fill">
         <mat-label>Data de Nascimento</mat-label>
-        <input [(ngModel)]="associado.dataNascimento" name="dataNascimento" matInput>
+        <input matInput [matDatepicker]="dataNascimento" [(ngModel)]="associado.dataNascimento" name="dataNascimento">
+        <mat-datepicker-toggle matSuffix [for]="dataNascimento"></mat-datepicker-toggle>
+        <mat-datepicker #dataNascimento></mat-datepicker>
     </mat-form-field>
     <!--LINHA-->
     <mat-form-field class="cinquenta-width" appearance="fill">
@@ -29,7 +35,11 @@
     </mat-form-field>
     <mat-form-field class="vinte-width" appearance="fill">
         <mat-label>Aposentado ou Pensionista</mat-label>
-        <input [(ngModel)]="associado.situacao" name="situacao" matInput>
+        <mat-select [(ngModel)]="associado.situacao" name="situacao">
+            <mat-option>Tipo</mat-option>
+            <mat-option value="0">Aposentado</mat-option>
+            <mat-option value="1">Pensionista</mat-option>
+        </mat-select>
     </mat-form-field>
     <!--LINHA-->
     <mat-form-field class="vinte-width" appearance="fill">
@@ -60,7 +70,9 @@
     </mat-form-field>
     <mat-form-field class="vinte-width" appearance="fill">
         <mat-label>Data Admissão Órgão Origem</mat-label>
-        <input [(ngModel)]="associado.dataAdmissaoOrgaoOrigem" name="dataAdmissaoOrgaoOrigem" matInput>
+        <input matInput [matDatepicker]="dataAdmissaoOrgaoOrigem" [(ngModel)]="associado.dataAdmissaoOrgaoOrigem" name="dataAdmissaoOrgaoOrigem">
+        <mat-datepicker-toggle matSuffix [for]="dataAdmissaoOrgaoOrigem"></mat-datepicker-toggle>
+        <mat-datepicker #dataAdmissaoOrgaoOrigem></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="vinte-width" appearance="fill">
         <mat-label>Falecidos</mat-label>
@@ -69,19 +81,32 @@
     <!--LINHA-->
     <mat-form-field class="vinte-width" appearance="fill">
         <mat-label>Data Admissão</mat-label>
-        <input [(ngModel)]="associado.dataAdmissao" name="dataAdmissao" matInput>
+        <input matInput [matDatepicker]="dataAdmissao" [(ngModel)]="associado.dataAdmissao" name="dataAdmissao">
+        <mat-datepicker-toggle matSuffix [for]="dataAdmissao"></mat-datepicker-toggle>
+        <mat-datepicker #dataAdmissao></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="vinte-width" appearance="fill">
         <mat-label>Data demissão</mat-label>
-        <input [(ngModel)]="associado.dataDemissao" name="dataDemissao" matInput>
+        <input matInput [matDatepicker]="dataDemissao" [(ngModel)]="associado.dataDemissao" name="dataDemissao">
+        <mat-datepicker-toggle matSuffix [for]="dataDemissao"></mat-datepicker-toggle>
+        <mat-datepicker #dataDemissao></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="vinte-width" appearance="fill">
-        <mat-label>Data Atualizaçào</mat-label>
-        <input [(ngModel)]="associado.dataAtualizacao" name="dataAtualizacao" matInput>
+        <mat-label>Data Atualização</mat-label>
+        <input matInput [matDatepicker]="dataAtualizacao" [(ngModel)]="associado.dataAtualizacao" name="dataAtualizacao">
+        <mat-datepicker-toggle matSuffix [for]="dataAtualizacao"></mat-datepicker-toggle>
+        <mat-datepicker #dataAtualizacao></mat-datepicker>
     </mat-form-field>
     <mat-form-field class="vinte-width" appearance="fill">
         <mat-label>Moeda</mat-label>
-        <input [(ngModel)]="associado.tipoMoeda" name="tipoMoeda" matInput>
+        <mat-select [(ngModel)]="associado.tipoMoeda" name="tipoMoeda">
+            <mat-option>Tipo</mat-option>
+            <mat-option value="0">Real</mat-option>
+            <mat-option value="1">Cruzeiro Real</mat-option>
+            <mat-option value="2">Cruzeiro</mat-option>
+            <mat-option value="3">Cruzado Novo</mat-option>
+            <mat-option value="4">Cruzado</mat-option>
+        </mat-select>
     </mat-form-field>
     <mat-form-field class="vinte-width" appearance="fill">
         <mat-label>Salário Bruto</mat-label>
@@ -127,7 +152,9 @@
     </mat-form-field>
     <mat-form-field class="vinte-width" appearance="fill">
         <mat-label>Data Cadastramento</mat-label>
-        <input [(ngModel)]="associado.dataCadastramento" name="dataCadastramento" matInput>
+        <input matInput [matDatepicker]="dataCadastramento" [(ngModel)]="associado.dataCadastramento" name="dataCadastramento">
+        <mat-datepicker-toggle matSuffix [for]="dataCadastramento"></mat-datepicker-toggle>
+        <mat-datepicker #dataCadastramento></mat-datepicker>
     </mat-form-field>
     <!--LINHA-->
     <mat-form-field class="quarenta-width" appearance="fill">

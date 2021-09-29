@@ -7,7 +7,7 @@ export interface Associado {
     id?: any;
     numero: Number;
     nome: String;
-    sexo: Number;
+    sexo: any;
     dataNascimento: String;
     idade2011: String;
     nomeMae: String;

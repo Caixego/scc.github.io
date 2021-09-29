@@ -20,7 +20,8 @@ export class AssociadoReaderComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
-      private service : AssociadoService) {}
+      private service : AssociadoService,
+      private router : Router) {}
 
   ngAfterViewInit() {
     this.findAll();
@@ -39,5 +40,6 @@ export class AssociadoReaderComponent implements AfterViewInit {
   }
 
   navigateToCreate():void {
+    this.router.navigate(['associado/create']);
   }
 }

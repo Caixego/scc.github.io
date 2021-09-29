@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,6 +22,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 import { HeaderComponent } from './views/components/template/header/header.component';
 import { FooterComponent } from './views/components/template/footer/footer.component';
 import { NavComponent } from './views/components/template/nav/nav.component';
@@ -31,6 +35,11 @@ import { AssociadoUpdateComponent } from './views/components/associado/associado
 import { AssociadoDeleteComponent } from './views/components/associado/associado-delete/associado-delete.component';
 import { AssociadoInativoComponent } from './views/components/associado/associado-inativo/associado-inativo.component';
 import { PagamentoReaderComponent } from './views/components/pagamento/pagamento-reader/pagamento-reader.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { PagamentoCreateComponent } from './views/components/pagamento/pagamento-create/pagamento-create.component';
+
+registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -44,7 +53,8 @@ import { PagamentoReaderComponent } from './views/components/pagamento/pagamento
     AssociadoUpdateComponent,
     AssociadoDeleteComponent,
     AssociadoInativoComponent,
-    PagamentoReaderComponent
+    PagamentoReaderComponent,
+    PagamentoCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -66,11 +76,14 @@ import { PagamentoReaderComponent } from './views/components/pagamento/pagamento
     MatTableModule,
     MatSelectModule,
     MatInputModule,
+    MatFormFieldModule,
     MatDatepickerModule,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatNativeDateModule,
+    MatAutocompleteModule
   ],
-  providers: [],
+  providers: [ { provide: LOCALE_ID, useValue: 'pt-BR' }  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

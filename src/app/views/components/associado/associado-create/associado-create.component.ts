@@ -86,6 +86,7 @@ export class AssociadoCreateComponent implements OnInit {
   }
 
   create(): void {
+    this.formatarCPF();
     this.service.create(this.associado).subscribe((resposta) => {
       this.router.navigate(['associado']);
       this.service.message('Associado criado com sucesso.');
@@ -110,5 +111,10 @@ export class AssociadoCreateComponent implements OnInit {
       return 'O cpf deve ter entre 11 e 15 caracteres!';
     }
     return false;
+  }
+
+  formatarCPF(): void {
+    this.associado.cpf = this.associado.cpf.replace(/[^\d]/g, "");
+    this.associado.cpf = this.associado.cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
   }
 }

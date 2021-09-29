@@ -1,3 +1,13 @@
+.filtro {
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
 .create {
     width: 90%;
     margin-right: auto;
@@ -9,7 +19,12 @@
     font-size: 2rem;
 }
 
-.create button {
+.button-medio {
+    width: 5%;
+    margin-left: 10px;
+}
+
+.button-full {
     width: 100%;
     margin: 1rem auto;
 }
